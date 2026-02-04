@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  prompt-vault:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3108:3108"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - NODE_ENV=production
+      - PORT=3108
